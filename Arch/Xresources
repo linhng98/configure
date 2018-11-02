@@ -4,7 +4,7 @@ xterm*VT100.Translations: #override \
                  Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
                  Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
 
-xterm*background: rgb:33/33/33
+xterm*background: rgb:22/22/22
 xterm*faceName: Liberation Mono
 xterm*faceSize: 14
 xterm*foreground: green
