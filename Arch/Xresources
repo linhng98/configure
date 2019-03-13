@@ -5,6 +5,7 @@ xterm*VT100.Translations: #override \
                  Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
 
 xterm*background: rgb:22/22/22
-xterm*faceName: Liberation Mono
+xterm*faceName: DejaVu Sans Mono
 xterm*faceSize: 14
-xterm*foreground: green
+xterm*foreground: #00dc00
+XTerm.vt100.renderFont: true
