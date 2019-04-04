@@ -1,11 +1,6 @@
-XTerm.vt100.scrollBar: false
+URxvt.font: xft:Dejavu Sans Mono:size=14
 
-xterm*VT100.Translations: #override \
-                 Ctrl Shift <Key>V:    insert-selection(CLIPBOARD) \n\
-                 Ctrl Shift <Key>C:    copy-selection(CLIPBOARD)
+URxvt.scrollBar: false
 
-xterm*background: rgb:22/22/22
-xterm*faceName: DejaVu Sans Mono
-xterm*faceSize: 14
-xterm*foreground: #00dc00
-XTerm.vt100.renderFont: true
+*.foreground: #00DC00
+*.background: #222222
