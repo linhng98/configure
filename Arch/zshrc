@@ -1,5 +1,4 @@
-export TERM='xterm-256color'
-PROMPT='[%F{red}%n%f@%F{blue}%m%f%F{yellow}%1~%f]$ '
+PROMPT='[%F{red}%n%f@%F{blue}%m %f%F{yellow}%1~%f]$ '
 
 # Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
