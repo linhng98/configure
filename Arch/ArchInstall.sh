@@ -101,11 +101,10 @@ echo 'XMODIFIERS=@im=fcitx' >> ~/.pam_environment
 
 ## install pikaur (aur helper)
 git clone https://aur.archlinux.org/pikaur.git
-cd pikaur
-makepkg -s
-sudo pacman -U --noconfirm *.pkg.tar.xz
+cd ~/pikaur
+makepkg -si --noconfirm
 cd --
-rm -rf pikaur
+rm -rf ~/pikaur
 
 ## install i3lock-next
 pikaur -S --noconfirm i3lock-next-git
