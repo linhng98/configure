@@ -100,7 +100,7 @@ echo 'QT_IM_MODULE=fcitx' >> ~/.pam_environment
 echo 'XMODIFIERS=@im=fcitx' >> ~/.pam_environment
 
 ## install pikaur (aur helper)
-git clone https://aur.archlinux.org/pikaur.git
+git clone https://aur.archlinux.org/pikaur.git ~/pikaur
 cd ~/pikaur
 sudo pacman -S --noconfirm pyalpm python
 makepkg
