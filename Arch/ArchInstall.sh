@@ -52,55 +52,57 @@ sed -i '/%wheel ALL=(ALL) ALL/s/^# //g' /etc/sudoers
 ## copy file config mirror list
 cp /configure/Arch/mirrorlist /etc/pacman.d/mirrorlist
 
+su linh <<'EOF'
 ## install xorg
-pacman -S --noconfirm xorg xorg-xinit
+sudo pacman -S --noconfirm xorg xorg-xinit
 echo 'exec i3' >> /home/$username/.xinitrc
 
 ## install i3 and i3-blocks
-pacman -S --noconfirm i3-wm i3blocks
+sudo pacman -S --noconfirm i3-wm i3blocks
 mkdir -p /home/$username/.config/i3
 mkdir /home/$username/.config/i3blocks
 cp /configure/Arch/i3.config /home/$username/.config/i3/config
 cp /configure/Arch/i3blocks.conf /home/$username/.config/i3blocks/config
-pacman -S --noconfirm sysstat
+sudo pacman -S --noconfirm sysstat
 
 ## install urxvt
-pacman -S --noconfirm rxvt-unicode
+sudo pacman -S --noconfirm rxvt-unicode
 cp /configure/Arch/Xresources /home/$username/.Xresources
 
 ## install gvim
-pacman -S --noconfirm gvim
+sudo pacman -S --noconfirm gvim
 cp /configure/Arch/vimrc /home/$username/.vimrc
 
 ## install zsh
-pacman -S --noconfirm zsh zsh-completions
+sudo pacman -S --noconfirm zsh zsh-completions
 cp /configure/Arch/zshrc /home/$username/.zshrc # copy config 
 usermod -s /bin/zsh $username # change default shell for user $username
 
 ## audio
-pacman -S --noconfirm alsamixer pulseaudio-alsa pamixer
+sudo pacman -S --noconfirm alsamixer pulseaudio-alsa pamixer
 
 ## screenshot
-pacman -S --noconfirm xclip scrot
+sudo pacman -S --noconfirm xclip scrot
 
 ## lock i3
-pacman -S --noconfirm i3lock
+sudo pacman -S --noconfirm i3lock
 
 ## install font
-pacman -S --noconfirm ttf-dejavu otf-ipafont ttf-hanazono
+sudoa pacman -S --noconfirm ttf-dejavu otf-ipafont ttf-hanazono
 
-## install chromium
-pacman -S --noconfirm chromium
+## install dmenu
+sudo pacman -S --noconfirm dmenu
 
 ## file management
-pacman -S --noconfirm nautilus
+sudo pacman -S --noconfirm nautilus
 
 ## fcitx
-pacman -S --noconfirm fcitx fcitx-im fcitx-unikey fcitx-configtool fcitx-mozc
+sudo pacman -S --noconfirm fcitx fcitx-im fcitx-unikey fcitx-configtool fcitx-mozc
 
 echo 'GTK_IM_MODULE=fcitx' >> /home/$username/.pam_environment
 echo 'QT_IM_MODULE=fcitx' >> /home/$username/.pam_environment
 echo 'XMODIFIERS=@im=fcitx' >> /home/$username/.pam_environment
+EOF
 
 ## remove configure folder
 rm -rf /configure
