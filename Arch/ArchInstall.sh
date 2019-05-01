@@ -52,30 +52,30 @@ sed -i '/%wheel ALL=(ALL) ALL/s/^# //g' /etc/sudoers
 ## copy file config mirror list
 cp /configure/Arch/mirrorlist /etc/pacman.d/mirrorlist
 
-su linh <<'EOF'
+su $username <<'EOF'
 ## install xorg
 sudo pacman -S --noconfirm xorg xorg-xinit
-echo 'exec i3' >> /home/$username/.xinitrc
+echo 'exec i3' >> ~/.xinitrc
 
 ## install i3 and i3-blocks
 sudo pacman -S --noconfirm i3-wm i3blocks
-mkdir -p /home/$username/.config/i3
-mkdir /home/$username/.config/i3blocks
-cp /configure/Arch/i3.config /home/$username/.config/i3/config
-cp /configure/Arch/i3blocks.conf /home/$username/.config/i3blocks/config
+mkdir -p ~/.config/i3
+mkdir ~/.config/i3blocks
+cp /configure/Arch/i3.config ~/.config/i3/config
+cp /configure/Arch/i3blocks.conf ~/.config/i3blocks/config
 sudo pacman -S --noconfirm sysstat
 
 ## install urxvt
 sudo pacman -S --noconfirm rxvt-unicode
-cp /configure/Arch/Xresources /home/$username/.Xresources
+cp /configure/Arch/Xresources ~/.Xresources
 
 ## install gvim
 sudo pacman -S --noconfirm gvim
-cp /configure/Arch/vimrc /home/$username/.vimrc
+cp /configure/Arch/vimrc ~/.vimrc
 
 ## install zsh
 sudo pacman -S --noconfirm zsh zsh-completions
-cp /configure/Arch/zshrc /home/$username/.zshrc # copy config 
+cp /configure/Arch/zshrc ~/.zshrc # copy config 
 usermod -s /bin/zsh $username # change default shell for user $username
 
 ## audio
@@ -99,9 +99,9 @@ sudo pacman -S --noconfirm nautilus
 ## fcitx
 sudo pacman -S --noconfirm fcitx fcitx-im fcitx-unikey fcitx-configtool fcitx-mozc
 
-echo 'GTK_IM_MODULE=fcitx' >> /home/$username/.pam_environment
-echo 'QT_IM_MODULE=fcitx' >> /home/$username/.pam_environment
-echo 'XMODIFIERS=@im=fcitx' >> /home/$username/.pam_environment
+echo 'GTK_IM_MODULE=fcitx' >> ~/.pam_environment
+echo 'QT_IM_MODULE=fcitx' >> ~/.pam_environment
+echo 'XMODIFIERS=@im=fcitx' >> ~/.pam_environment
 EOF
 
 ## remove configure folder
