@@ -76,7 +76,6 @@ cp /configure/Arch/vimrc ~/.vimrc
 ## install zsh
 sudo pacman -S --noconfirm zsh zsh-completions
 cp /configure/Arch/zshrc ~/.zshrc # copy config 
-usermod -s /bin/zsh $username # change default shell for user $username
 
 ## audio
 sudo pacman -S --noconfirm alsamixer pulseaudio-alsa pamixer
@@ -88,7 +87,7 @@ sudo pacman -S --noconfirm xclip scrot
 sudo pacman -S --noconfirm i3lock
 
 ## install font
-sudoa pacman -S --noconfirm ttf-dejavu otf-ipafont ttf-hanazono
+sudo pacman -S --noconfirm ttf-dejavu otf-ipafont ttf-hanazono
 
 ## install dmenu
 sudo pacman -S --noconfirm dmenu
@@ -103,6 +102,8 @@ echo 'GTK_IM_MODULE=fcitx' >> ~/.pam_environment
 echo 'QT_IM_MODULE=fcitx' >> ~/.pam_environment
 echo 'XMODIFIERS=@im=fcitx' >> ~/.pam_environment
 EOF
+
+usermod -s /bin/zsh $username # change default shell for user $username
 
 ## remove configure folder
 rm -rf /configure
