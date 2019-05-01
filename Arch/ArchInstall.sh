@@ -76,7 +76,7 @@ sudo pacman -S --noconfirm gvim
 cp /configure/Arch/vimrc ~/.vimrc
 
 ## install zsh
-sudo pacman -S --noconfirm zsh zsh-completions
+sudo pacman -S --noconfirm zsh zsh-completions dash
 cp /configure/Arch/zshrc ~/.zshrc # copy config 
 
 ## audio
