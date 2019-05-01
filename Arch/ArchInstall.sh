@@ -78,13 +78,10 @@ sudo pacman -S --noconfirm zsh zsh-completions
 cp /configure/Arch/zshrc ~/.zshrc # copy config 
 
 ## audio
-sudo pacman -S --noconfirm alsamixer pulseaudio-alsa pamixer
+sudo pacman -S --noconfirm alsa-utils pulseaudio-alsa pamixer
 
 ## screenshot
 sudo pacman -S --noconfirm xclip scrot
-
-## lock i3
-sudo pacman -S --noconfirm i3lock
 
 ## install font
 sudo pacman -S --noconfirm ttf-dejavu otf-ipafont ttf-hanazono
@@ -101,6 +98,17 @@ sudo pacman -S --noconfirm fcitx fcitx-im fcitx-unikey fcitx-configtool fcitx-mo
 echo 'GTK_IM_MODULE=fcitx' >> ~/.pam_environment
 echo 'QT_IM_MODULE=fcitx' >> ~/.pam_environment
 echo 'XMODIFIERS=@im=fcitx' >> ~/.pam_environment
+
+## install pikaur (aur helper)
+git clone https://aur.archlinux.org/pikaur.git
+cd pikaur
+makepkg -s
+sudo pacman -U --noconfirm *.pkg.tar.xz
+cd --
+rm -rf pikaur
+
+## install i3lock-next
+pikaur -S --noconfirm i3lock-next-git
 EOF
 
 usermod -s /bin/zsh $username # change default shell for user $username
