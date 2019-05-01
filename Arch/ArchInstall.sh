@@ -3,6 +3,11 @@
 ## detect laptop or pc
 read -p 'this device is pc or laptop (1:pc, 2:laptop) ? ' device_type
 
+## input username and password
+read -p 'input root password : ' rootpass
+read -p 'input user name : ' username
+read -p 'input user password : ' userpass
+
 ## install intel-ucode
 pacman -S --noconfirm intel-ucode
 
@@ -37,13 +42,11 @@ echo 'initrd /initramfs-linux.img' >> /boot/loader/entries/arch.conf
 echo 'options root=/dev/sda2 rw' >> /boot/loader/entries/arch.conf
 
 ## set root password
-echo 'set root password'
-passwd
+echo "root:$rootpass" | chpasswd
 
 ## create new user and uncomment visudo for wheel group
-useradd -m -G wheel -s /bin/bash linh
-echo 'set user linh password'
-passwd linh
+useradd -m -G wheel -s /bin/bash $username
+echo "$username:$userpass" | chpasswd
 sed -i '/%wheel ALL=(ALL) ALL/s/^# //g' /etc/sudoers
 
 ## copy file config mirror list
@@ -51,26 +54,28 @@ cp /configure/Arch/mirrorlist /etc/pacman.d/mirrorlist
 
 ## install xorg
 pacman -S --noconfirm xorg xorg-xinit
-echo 'exec i3' >> /home/linh/.xinitrc
+echo 'exec i3' >> /home/$username/.xinitrc
 
 ## install i3 and i3-blocks
-pacman -S i3
-cp /configure/Arch/i3.config /home/linh/.config/i3/config
-cp /configure/Arch/i3blocks.conf /home/linh/.config/i3blocks/config
+pacman -S --noconfirm i3-wm i3blocks
+mkdir -p /home/$username/.config/i3
+mkdir /home/$username/.config/i3blocks
+cp /configure/Arch/i3.config /home/$username/.config/i3/config
+cp /configure/Arch/i3blocks.conf /home/$username/.config/i3blocks/config
 pacman -S --noconfirm sysstat
 
 ## install urxvt
 pacman -S --noconfirm rxvt-unicode
-cp /configure/Arch/Xresources /home/linh/.Xresources
+cp /configure/Arch/Xresources /home/$username/.Xresources
 
 ## install gvim
 pacman -S --noconfirm gvim
-cp /configure/Arch/vimrc /home/linh/.vimrc
+cp /configure/Arch/vimrc /home/$username/.vimrc
 
 ## install zsh
 pacman -S --noconfirm zsh zsh-completions
-cp /configure/Arch/zshrc /home/linh/.zshrc # copy config 
-usermod -s /bin/zsh linh # change default shell for user linh
+cp /configure/Arch/zshrc /home/$username/.zshrc # copy config 
+usermod -s /bin/zsh $username # change default shell for user $username
 
 ## audio
 pacman -S --noconfirm alsamixer pulseaudio-alsa pamixer
@@ -82,13 +87,20 @@ pacman -S --noconfirm xclip scrot
 pacman -S --noconfirm i3lock
 
 ## install font
-pacman -S --noconfirm ttf-dejavu
+pacman -S --noconfirm ttf-dejavu otf-ipafont ttf-hanazono
 
 ## install chromium
 pacman -S --noconfirm chromium
 
 ## file management
 pacman -S --noconfirm nautilus
+
+## fcitx
+pacman -S --noconfirm fcitx fcitx-im fcitx-unikey fcitx-configtool fcitx-mozc
+
+echo 'GTK_IM_MODULE=fcitx' >> /home/$username/.pam_environment
+echo 'QT_IM_MODULE=fcitx' >> /home/$username/.pam_environment
+echo 'XMODIFIERS=@im=fcitx' >> /home/$username/.pam_environment
 
 ## remove configure folder
 rm -rf /configure
