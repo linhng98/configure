@@ -50,6 +50,7 @@ echo "$username:$userpass" | chpasswd
 sed -i '/%wheel ALL=(ALL) ALL/s/^# //g' /etc/sudoers
 
 ## copy file config mirror list
+cp /etc/pacman.d/mirrorlist /etc/pacman.d/mirrorlist.backup # backup mirror
 cp /configure/Arch/mirrorlist /etc/pacman.d/mirrorlist
 
 su $username <<'EOF'
