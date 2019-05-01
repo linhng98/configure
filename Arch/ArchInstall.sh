@@ -102,7 +102,9 @@ echo 'XMODIFIERS=@im=fcitx' >> ~/.pam_environment
 ## install pikaur (aur helper)
 git clone https://aur.archlinux.org/pikaur.git
 cd ~/pikaur
-makepkg -si --noconfirm
+sudo pacman -S --noconfirm pyalpm python
+makepkg
+sudo pacman -U --noconfirm *.pkg.tar.xz
 cd --
 rm -rf ~/pikaur
 
