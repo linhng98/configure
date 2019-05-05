@@ -20,10 +20,6 @@ pacman -S --noconfirm intel-ucode
 pacman -S --noconfirm networkmanager
 systemctl enable NetworkManager
 
-## time zone
-timedatectl set-timezone Asia/Ho_Chi_Minh
-timedatectl set-local-rtc 1
-
 ## locale
 sed -i '/en_US.UTF-8/s/^#//g' /etc/locale.gen
 locale-gen
@@ -112,6 +108,10 @@ rm -rf ~/pikaur
 
 ## install i3lock-next
 pikaur -S --noconfirm i3lock-next-git
+
+## time zone
+sudo timedatectl set-timezone Asia/Ho_Chi_Minh
+sudo timedatectl set-local-rtc 1
 EOF
 
 usermod -s /bin/zsh $username # change default shell for user $username
