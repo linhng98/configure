@@ -168,11 +168,13 @@ bar {
 
 for_window [class="^.*"] border pixel 1
 
-exec_always --no-startup-id feh --bg-scale /home/linh/Pictures/wallpaper/moer\ kaihen.jpg
+exec_always --no-startup-id feh --bg-scale /home/linh/Pictures/wallpaper/arch_wallpaper.jpg
 exec_always --no-startup-id i3blocks
 exec_always --no-startup-id fcitx
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id xinput --set-prop 14 285 -0.2
+exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton.conf --blur-method kawase --blur-background --blur-strength 5"
+
 
 bindsym $mod+c exec --no-startup-id chromium
 bindsym $mod+f exec --no-startup-id nautilus
