@@ -25,7 +25,8 @@
 # The top properties below are applied to every block, but can be overridden.
 # Each block command defaults to the script name to avoid boilerplate.
 command=/usr/lib/i3blocks/$BLOCK_NAME
-separator_block_width=15
+separator_block_width=45
+color=#33ffff
 markup=none
 
 # Volume indicator
@@ -34,30 +35,24 @@ markup=none
 # The second parameter overrides the mixer selection
 # See the script for details.
 [volume]
-label=VOL
+label=VOL  
 #label=♪
 instance=Master
 separator=true
 #instance=PCM
 interval=1
-signal=10
 
-[battery]
-label=BAT
-command=echo "`cat /sys/class/power_supply/BAT1/capacity`% `cat /sys/class/power_supply/BAT1/status`"
-separator=true
-interval=5
 
 # Memory usage
 #
 # The type defaults to "mem" if the instance is not specified.
 [memory]
-label=MEM
+label=MEM  
 separator=true
 interval=1
 
 [cpu_usage]
-label=CPU
+label=CPU  
 separator=true
 interval=1
 
@@ -73,7 +68,7 @@ interval=1
 # The script may be called with a optional argument to set the alert
 # (defaults to 10 for 10%).
 [disk]
-label=HOME
+label=HOME  
 separator=true
 #instance=/mnt/data
 interval=30
@@ -84,7 +79,6 @@ interval=30
 # The address can be forced to IPv4 or IPv6 with -4 or -6 switches.
 [iface]
 #instance=wlan0
-color=#00FF00
 interval=20
 separator=true
 

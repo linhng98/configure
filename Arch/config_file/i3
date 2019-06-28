@@ -28,6 +28,11 @@ client.focused          #4c7899 #285577 #ffffff #00ff00   #00ff00
 # X core fonts rendering does not support right-to-left and this being a bitmap
 # font, it doesn’t scale on retina/hidpi displays.
 
+# Gaps pixel
+smart_gaps on
+gaps inner 5
+gaps outer 5
+
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -67,7 +72,7 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # lock desktop
-bindsym $mod+Shift+l exec i3lock-next
+bindsym $mod+Shift+l exec i3lock -i ~/Pictures/wallpaper/lockscreen.png
 
 # move window position
 bindsym $mod+Shift+Left move left
@@ -168,7 +173,7 @@ bar {
 
 for_window [class="^.*"] border pixel 1
 
-exec_always --no-startup-id feh --bg-scale /home/linh/Pictures/wallpaper/arch_wallpaper.jpg
+exec_always --no-startup-id feh --bg-scale /home/linh/Pictures/wallpaper/art_forest_mountain.jpg
 exec_always --no-startup-id i3blocks
 exec_always --no-startup-id fcitx
 exec_always --no-startup-id xrdb ~/.Xresources
@@ -176,6 +181,6 @@ exec_always --no-startup-id xinput --set-prop 14 285 -0.2
 exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton.conf --blur-method kawase --blur-background --blur-strength 5"
 
 
-bindsym $mod+c exec --no-startup-id chromium
+bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+f exec --no-startup-id nautilus
 bindsym $mod+t exec --no-startup-id urxvt
