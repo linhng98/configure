@@ -80,7 +80,8 @@ sudo timedatectl set-timezone Asia/Ho_Chi_Minh
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
 ## check if device is laptop
-if [ $device_type -eq 2 ] then
+if [ $device_type -eq 2 ] 
+then
     ## brightness
     sudo pacman -S --noconfirm xorg-xbacklight
     sudo cp ~/configure/Arch/config_file/20-intel.conf /etc/X11/xorg.conf.d/20-intel.conf
