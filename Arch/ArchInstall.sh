@@ -1,8 +1,5 @@
 #!/bin/bash
 
-## detect laptop or pc
-read -p 'this device is pc or laptop (1:pc, 2:laptop) ? ' device_type
-
 ## input username and password
 read -p 'input root password : ' rootpass
 read -p 'input user name : ' username
