@@ -51,7 +51,7 @@ cd -
 rm -rf pikaur
 
 ## compton
-pikaur -S --noconfirm compton-tryone-git
+pikaur -S --noconfirm compton-tryone-git feh
 cp ~/configure/Arch/config_file/compton ~/.config/compton.conf
 
 ## wallpaper
