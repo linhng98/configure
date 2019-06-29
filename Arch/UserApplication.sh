@@ -65,7 +65,7 @@ pikaur -S --noconfirm nerd-fonts-source-code-pro ttf-mac-fonts ttf-ms-fonts
 ## kvm
 sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
 sudo systemctl enable libvirtd.service
-sudo echo nvram = ["/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd"] >> /etc/libvirt/qemu.conf
+sudo bash -c 'echo nvram = ["/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd"] >> /etc/libvirt/qemu.conf'
 sudo cp ~/configure/Arch/config_file/50-libvirt.rules /etc/polkit-1/rules.d/50-libvirt.rules
 sudo usermod -aG kvm linh
 
@@ -83,7 +83,7 @@ sudo timedatectl set-local-rtc 1 --adjust-system-clock
 if [ $device_type -eq 2 ] 
 then
     ## brightness
-    sudo pacman -S --noconfirm xorg-xbacklight
+    sudo pacman -S --noconfirm xorg-xbacklight xf86-video-intel
     sudo cp ~/configure/Arch/config_file/20-intel.conf /etc/X11/xorg.conf.d/20-intel.conf
 
     ## touchpad
