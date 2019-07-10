@@ -79,6 +79,12 @@ sudo usermod -s /bin/zsh $USER
 sudo timedatectl set-timezone Asia/Ho_Chi_Minh
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
+## office
+pikaur -S --noconfirm wps-office ttf-wps-fonts
+sudo mv /usr/bin/et /usr/bin/wps-spreadsheet
+sudo mv /usr/bin/wps /usr/bin/wps-writer
+sudo mv /usr/bin/wpp /usr/bin/wps-present
+
 ## check if device is laptop
 if [ $device_type -eq 2 ] 
 then
