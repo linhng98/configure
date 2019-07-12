@@ -73,7 +73,7 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # lock desktop
-bindsym $mod+Shift+l exec i3lock -i ~/Pictures/wallpaper/lockscreen.png
+bindsym $mod+Shift+l exec "i3lock -i ~/Pictures/wallpaper/lockscreen.png && sleep 2 && xset dpms force off"
 
 # move window position
 bindsym $mod+Shift+Left move left
