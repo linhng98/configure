@@ -63,11 +63,11 @@ sudo pacman -S --noconfirm ttf-dejavu noto-fonts noto-fonts-cjk ttf-font-awesome
 pikaur -S --noconfirm nerd-fonts-source-code-pro ttf-mac-fonts ttf-ms-fonts
 
 ## kvm
-sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
-sudo bash -c 'echo nvram = [\"/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd\"] >> /etc/libvirt/qemu.conf'
-sudo cp ~/configure/Arch/config_file/50-libvirt.rules /etc/polkit-1/rules.d/50-libvirt.rules
-sudo usermod -aG kvm linh
-sudo systemctl enable libvirtd
+#sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
+#sudo bash -c 'echo nvram = [\"/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd\"] >> /etc/libvirt/qemu.conf'
+#sudo cp ~/configure/Arch/config_file/50-libvirt.rules /etc/polkit-1/rules.d/50-libvirt.rules
+#sudo usermod -aG kvm linh
+#sudo systemctl enable libvirtd
 
 ## auto start
 cp ~/configure/Arch/config_file/zprofile ~/.zprofile
