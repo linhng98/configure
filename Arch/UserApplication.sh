@@ -80,7 +80,6 @@ sudo timedatectl set-timezone Asia/Ho_Chi_Minh
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
 ## office
-pikaur -S --noconfirm wps-office ttf-wps-fonts
 
 ## image viewer
 sudo pacman -S --noconfirm nomacs
