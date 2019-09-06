@@ -49,8 +49,8 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window -theme onedark
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # audio
-bindsym Control+Up exec --no-startup-id pamixer -i 2
-bindsym Control+Down exec --no-startup-id pamixer -d 2
+bindsym Control+Left exec --no-startup-id pamixer -d 2
+bindsym Control+Right exec --no-startup-id pamixer -i 2
 bindsym Control+0 exec --no-startup-id amixer set 'Master' toggle
 
 
