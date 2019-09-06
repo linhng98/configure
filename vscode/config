@@ -1,22 +1,13 @@
 {
-    "python.linting.pylintEnabled": false,
-    "python.linting.pep8Enabled": true,
-    "python.linting.enabled": true,
-    "window.zoomLevel": 0,
     "editor.fontSize": 17,
+    "python.venvFolders": [
+        "~/.virt-env"
+    ],
+    "python.pythonPath": "~/.virt-env/bin/python3",
+    "python.venvPath": "~/.virt-env",
+    "go.gopath": "~/Project/go",
     "files.autoSave": "afterDelay",
     "workbench.iconTheme": "material-icon-theme",
-    "html.format.wrapLineLength": 80,
-    "[css]": {
-        "editor.defaultFormatter": "aeschli.vscode-css-formatter"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "vscode.html-language-features"
-    },
-    "editor.formatOnPaste": true,
-    "[c]": {
-        "editor.defaultFormatter": "xaver.clang-format"
-    },
     "rust-client.rlsPath": "/home/linh/.cargo/bin/rls",
     "rust-client.rustupPath": "/home/linh/.cargo/bin/rustup",
 }
