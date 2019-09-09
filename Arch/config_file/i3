@@ -168,7 +168,7 @@ bar {
         # modifier Mod4
         font pango:DejaVu Sans Mono 8
         
-        status_command i3status
+        status_command i3blocks
         position bottom
         
 }

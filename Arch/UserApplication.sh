@@ -7,11 +7,13 @@ read -p 'this device is pc or laptop (1:pc, 2:laptop) ? ' device_type
 sudo pacman -S --noconfirm xorg xorg-xinit git
 echo 'exec i3' >> ~/.xinitrc
 
-## install i3 and i3status
-sudo pacman -S --noconfirm i3-gaps i3status
+## install i3 and i3-blocks
+sudo pacman -S --noconfirm i3-gaps i3blocks
 mkdir -p ~/.config/i3
+mkdir ~/.config/i3blocks
 cp ~/configure/Arch/config_file/i3 ~/.config/i3/config
-cp ~/configure/Arch/config_file/i3status ~/.config/i3status/config
+cp ~/configure/Arch/config_file/i3blocks ~/.config/i3blocks/config
+sudo pacman -S --noconfirm sysstat
 
 ## install urxvt
 sudo pacman -S --noconfirm rxvt-unicode
