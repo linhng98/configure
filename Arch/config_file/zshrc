@@ -15,3 +15,7 @@ compinit
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias lt='tree -C'
+
+export GOPATH=$HOME/Project/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN

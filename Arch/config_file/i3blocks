@@ -12,7 +12,7 @@ separator_block_width=30
 color=#33ffff
 
 [pin]
-command=echo "BAT   `cat /sys/class/power_supply/BAT1/capacity` `cat /sys/class/power_supply/BAT1/status`"
+command=echo "BAT   `cat /sys/class/power_supply/BAT1/capacity`% `cat /sys/class/power_supply/BAT1/status`"
 interval=10
 
 [volume]
@@ -24,7 +24,7 @@ command=echo "CPU   `top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\
 interval=1
 
 [ram]
-command=echo "RAM   `grep "MemFree" /proc/meminfo | awk '{printf "%.1fG\n", $2/1000000}'`"
+command=echo "RAM   `grep "MemAvailable" /proc/meminfo | awk '{printf "%.1fG\n", $2/1000000}'`"
 interval=1
 
 [disk]
