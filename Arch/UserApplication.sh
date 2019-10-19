@@ -42,15 +42,15 @@ sudo pacman -S --noconfirm nautilus
 sudo pacman -S --noconfirm fcitx fcitx-im fcitx-unikey fcitx-configtool fcitx-mozc
 cp ~/configure/Arch/config_file/pam_environment ~/.pam_environment
 
-## pikaur
-git clone https://aur.archlinux.org/pikaur.git
-cd pikaur
+## yay
+git clone https://aur.archlinux.org/yay.git
+cd yay
 makepkg -si --noconfirm
 cd -
-rm -rf pikaur
+rm -rf yay
 
 ## compton
-pikaur -S --noconfirm compton-tryone-git feh
+yay -S --noconfirm compton-tryone-git feh
 cp ~/configure/Arch/config_file/compton ~/.config/compton.conf
 
 ## wallpaper
@@ -59,14 +59,14 @@ cp -R ~/configure/Arch/wallpaper ~/Pictures/
 
 ## font
 sudo pacman -S --noconfirm ttf-dejavu noto-fonts noto-fonts-cjk ttf-font-awesome  noto-fonts-emoji otf-ipafont ttf-hanazono
-pikaur -S --noconfirm nerd-fonts-source-code-pro ttf-mac-fonts ttf-ms-fonts
+yay -S --noconfirm nerd-fonts-source-code-pro ttf-mac-fonts ttf-ms-fonts
 
 ## kvm
-#sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
-#sudo bash -c 'echo nvram = [\"/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd\"] >> /etc/libvirt/qemu.conf'
-#sudo cp ~/configure/Arch/config_file/50-libvirt.rules /etc/polkit-1/rules.d/50-libvirt.rules
-#sudo usermod -aG kvm linh
-#sudo systemctl enable libvirtd
+sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
+sudo bash -c 'echo nvram = [\"/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd\"] >> /etc/libvirt/qemu.conf'
+sudo cp ~/configure/Arch/config_file/50-libvirt.rules /etc/polkit-1/rules.d/50-libvirt.rules
+sudo usermod -aG kvm linh
+sudo systemctl enable libvirtd
 
 ## auto start
 cp ~/configure/Arch/config_file/zprofile ~/.zprofile
