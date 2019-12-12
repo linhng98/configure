@@ -15,6 +15,15 @@ compinit
 alias ls='ls --color=auto'
 alias ll='ls -la'
 alias lt='tree -C'
+alias gi='git init'
+alias ga='git add'
+alias gcm='git commit'
+alias grv='git revert'
+alias gl='git log'
+alias gco='git checkout'
+alias gs='git status'
+alias grs='git reset'
+alias gb='git branch'
 
 export GOPATH=$HOME/Project/go
 export GOBIN=$GOPATH/bin
