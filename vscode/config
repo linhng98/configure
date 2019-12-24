@@ -10,4 +10,15 @@
     "workbench.iconTheme": "material-icon-theme",
     "rust-client.rlsPath": "/home/linh/.cargo/bin/rls",
     "rust-client.rustupPath": "/home/linh/.cargo/bin/rustup",
+    "[c]": {
+        "editor.defaultFormatter": "xaver.clang-format"
+    },
+    "markdown.extension.toc.updateOnSave": false,
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "javascript.updateImportsOnFileMove.enabled": "always",
+    "editor.tabSize": 2,
+    "diffEditor.ignoreTrimWhitespace": false,
 }
+
