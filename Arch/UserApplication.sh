@@ -58,8 +58,7 @@ mkdir ~/Pictures
 cp -R ~/configure/Arch/wallpaper ~/Pictures/
 
 ## font
-sudo pacman -S --noconfirm ttf-dejavu noto-fonts noto-fonts-cjk ttf-font-awesome  noto-fonts-emoji otf-ipafont ttf-hanazono
-yay -S --noconfirm nerd-fonts-source-code-pro ttf-mac-fonts ttf-ms-fonts
+sudo pacman -S --noconfirm ttf-dejavu ttf-liberation noto-fonts ttf-font-awesome noto-fonts-emoji otf-ipafont ttf-hanazono
 
 ## kvm
 sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
@@ -78,8 +77,6 @@ sudo usermod -s /bin/zsh $USER
 sudo timedatectl set-timezone Asia/Ho_Chi_Minh
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
-## image viewer
-sudo pacman -S --noconfirm nomacs
 
 ## check if device is laptop
 if [ $device_type -eq 2 ] 
