@@ -77,6 +77,11 @@ sudo usermod -s /bin/zsh $USER
 sudo timedatectl set-timezone Asia/Ho_Chi_Minh
 sudo timedatectl set-local-rtc 1 --adjust-system-clock
 
+## git
+git config --global core.editor vim
+git config --global credential.helper store
+git config --global user.email "linh1612340@gmail.com"
+git config --global user.name "nobabykill" 
 
 ## check if device is laptop
 if [ $device_type -eq 2 ] 
