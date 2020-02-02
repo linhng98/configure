@@ -26,6 +26,7 @@ alias grs='git reset'
 alias gb='git branch'
 alias gp='git push'
 alias gm='git merge'
+alias vi='vim'
 
 export GOPATH=$HOME/Project/go
 export GOBIN=$GOPATH/bin
