@@ -73,7 +73,7 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # lock desktop
-bindsym $mod+Shift+l exec "i3lock -i ~/Pictures/wallpaper/lockscreen.png && sleep 2 && xset dpms force off"
+bindsym $mod+Shift+l exec "i3lock -i ~/Pictures/wallpaper/lockscreen.png --clock --indicator --insidecolor=88888888 & sleep 2 && xset dpms force off"
 
 # move window position
 bindsym $mod+Shift+Left move left
@@ -174,12 +174,12 @@ bar {
 }
 
 for_window [class="^.*"] border pixel 0
-exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper/witcher_sword.png
+exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper/witcher-sword.png
 exec_always --no-startup-id i3blocks
 exec_always --no-startup-id fcitx
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id xinput --set-prop 14 285 -0.2
-exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton.conf --blur-method kawase --blur-background --blur-strength 5"
+exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton.conf --blur-method kawase --blur-background --blur-strength 3"
 
 
 bindsym $mod+b exec --no-startup-id firefox

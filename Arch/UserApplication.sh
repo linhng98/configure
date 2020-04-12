@@ -88,6 +88,12 @@ sudo pacman -S --noconfirm lightdm lightdm-webkit2-greeter
 sudo systemctl enable lightdm
 sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 
+## utilize multi threads compress
+sudo sed -i -e "s/COMPRESSXZ=(xz -c -z -)/COMPRESSXZ=(xz -c -z - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
+
+## enable android caple connection file transfer
+sudo pacman -S --noconfirm gvfs-mtp mtpfs
+
 ## check if device is laptop
 if [ $device_type -eq 2 ] 
 then
