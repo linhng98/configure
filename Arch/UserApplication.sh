@@ -3,6 +3,13 @@
 ## detect laptop or pc
 read -p 'this device is pc or laptop (1:pc, 2:laptop) ? ' device_type
 
+## yay
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si --noconfirm
+cd -
+rm -rf yay
+
 ## install xorg
 sudo pacman -S --noconfirm xorg xorg-xinit git
 echo 'exec i3' >> ~/.xinitrc
@@ -24,7 +31,9 @@ cp ~/configure/Arch/config_file/vimrc ~/.vimrc
 
 ## install zsh
 sudo pacman -S --noconfirm zsh zsh-completions dash
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 cp ~/configure/Arch/config_file/zshrc ~/.zshrc # copy config 
+cp ~/configure/Arch/config_file/zshenv ~/.zshenv # env 
 
 ## audio
 sudo pacman -S --noconfirm alsa-utils pulseaudio-alsa pamixer
@@ -42,13 +51,6 @@ sudo pacman -S --noconfirm nautilus
 sudo pacman -S --noconfirm fcitx fcitx-im fcitx-unikey fcitx-configtool fcitx-mozc
 cp ~/configure/Arch/config_file/pam_environment ~/.pam_environment
 
-## yay
-git clone https://aur.archlinux.org/yay.git
-cd yay
-makepkg -si --noconfirm
-cd -
-rm -rf yay
-
 ## compton
 yay -S --noconfirm compton-tryone-git feh
 cp ~/configure/Arch/config_file/compton ~/.config/compton.conf
@@ -58,7 +60,12 @@ mkdir ~/Pictures
 cp -R ~/configure/Arch/wallpaper ~/Pictures/
 
 ## font
-sudo pacman -S --noconfirm ttf-dejavu ttf-liberation noto-fonts ttf-font-awesome noto-fonts-emoji otf-ipafont ttf-hanazono
+sudo pacman -S --noconfirm ttf-dejavu ttf-liberation noto-fonts ttf-font-awesome noto-fonts-emoji otf-ipafont ttf-hanazono powerline-fonts
+
+## theme and icon
+sudo pacman -S --noconfirm  arc-icon-theme deepin-gtk-theme
+mkdir ~/.config/gtk-3.0
+cp ~/configure/Arch/config_file/gtk3-settings.ini ~/.config/gtk-3.0/settings.ini
 
 ## kvm
 sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
