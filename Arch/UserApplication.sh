@@ -60,7 +60,8 @@ mkdir ~/Pictures
 cp -R ~/configure/Arch/wallpaper ~/Pictures/
 
 ## font
-sudo pacman -S --noconfirm ttf-dejavu ttf-liberation noto-fonts ttf-font-awesome noto-fonts-emoji otf-ipafont ttf-hanazono powerline-fonts
+sudo pacman -S --noconfirm ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji otf-ipafont ttf-hanazono powerline-fonts 
+yay -S nerd-fonts-source-code-pro
 
 ## theme and icon
 sudo pacman -S --noconfirm  arc-icon-theme deepin-gtk-theme
