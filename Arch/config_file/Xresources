@@ -1,4 +1,4 @@
-URxvt*font: xft:Dejavu Sans Mono for Powerline:regular:size=14
+URxvt*font: xft:Dejavu Sans Mono Nerd Font:regular:size=14
 
 URxvt.scrollBar: false
 
