@@ -61,7 +61,7 @@ cp -R ~/configure/Arch/wallpaper ~/Pictures/
 
 ## font
 sudo pacman -S --noconfirm ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji otf-ipafont ttf-hanazono powerline-fonts 
-yay -S nerd-fonts-source-code-pro
+yay -S --noconfirm nerd-fonts-source-code-pro nerd-fonts-dejavu-complete
 
 ## theme and icon
 sudo pacman -S --noconfirm  arc-icon-theme deepin-gtk-theme
