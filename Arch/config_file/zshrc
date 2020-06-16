@@ -125,3 +125,5 @@ alias gb='git branch'
 alias gp='git push'
 alias gm='git merge'
 alias vi='vim'
+
+setopt no_share_history
