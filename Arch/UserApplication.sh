@@ -32,6 +32,7 @@ cp ~/configure/Arch/config_file/vimrc ~/.vimrc
 ## install zsh
 sudo pacman -S --noconfirm zsh zsh-completions dash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 cp ~/configure/Arch/config_file/zshrc ~/.zshrc # copy config 
 cp ~/configure/Arch/config_file/zshenv ~/.zshenv # env 
 
