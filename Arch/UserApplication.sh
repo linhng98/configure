@@ -26,7 +26,9 @@ sudo pacman -S --noconfirm rxvt-unicode
 cp ~/configure/Arch/config_file/Xresources ~/.Xresources
 
 ## install nvim
-sudo pacman -S --noconfirm neovim
+sudo pacman -S --noconfirm neovim nodejs yarn
+vim +PluginInstall +qall
+vim -c 'CocInstall -sync coc-python coc-go'
 cp ~/configure/Arch/config_file/vimrc ~.config/nvim/init.vim
 
 ## install zsh
