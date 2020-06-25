@@ -25,9 +25,9 @@ cp ~/configure/Arch/config_file/i3blocks ~/.config/i3blocks/config
 sudo pacman -S --noconfirm rxvt-unicode
 cp ~/configure/Arch/config_file/Xresources ~/.Xresources
 
-## install gvim
-sudo pacman -S --noconfirm gvim
-cp ~/configure/Arch/config_file/vimrc ~/.vimrc
+## install nvim
+sudo pacman -S --noconfirm neovim
+cp ~/configure/Arch/config_file/vimrc ~.config/nvim/init.vim
 
 ## install zsh
 sudo pacman -S --noconfirm zsh zsh-completions dash
