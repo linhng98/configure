@@ -27,9 +27,9 @@ cp ~/configure/Arch/config_file/Xresources ~/.Xresources
 
 ## install nvim
 sudo pacman -S --noconfirm neovim nodejs yarn
-vim +PluginInstall +qall
-vim -c 'CocInstall -sync coc-python coc-go'
-cp ~/configure/Arch/config_file/vimrc ~.config/nvim/init.vim
+git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+mkdir ~/.config/nvim
+cp ~/configure/Arch/config_file/vimrc ~/.config/nvim/init.vim
 
 ## install zsh
 sudo pacman -S --noconfirm zsh zsh-completions dash
