@@ -21,9 +21,13 @@ mkdir ~/.config/i3blocks
 cp ~/configure/Arch/config_file/i3 ~/.config/i3/config
 cp ~/configure/Arch/config_file/i3blocks ~/.config/i3blocks/config
 
-## install urxvt
-sudo pacman -S --noconfirm rxvt-unicode
-cp ~/configure/Arch/config_file/Xresources ~/.Xresources
+## install st
+git clone https://github.com/khuedoan98/st.git
+cd st
+cp ~/configure/Arch/config_file/st.config.h config.h
+sudo make clean install
+cd ..
+rm -rf st
 
 ## install nvim
 sudo pacman -S --noconfirm neovim nodejs yarn
@@ -50,7 +54,7 @@ sudo pacman -S --noconfirm dmenu
 ## file management
 sudo pacman -S --noconfirm nautilus
 
-## fcitx
+## ibus
 sudo pacman -S --noconfirm ibus
 yay -S --noconfirm ibus-bamboo
 
