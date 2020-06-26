@@ -72,7 +72,6 @@ plugins=(
     git 
     virtualenv 
     dotenv 
-    zsh-autosuggestions
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -129,7 +128,7 @@ alias grs='git reset'
 alias gb='git branch'
 alias gp='git push'
 alias gm='git merge'
-alias vi='vim'
+alias vi='nvim'
+alias vim='nvim'
 
 setopt no_share_history
-ZSH_DOTENV_PROMPT=always

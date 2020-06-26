@@ -9,3 +9,11 @@ export PATH=$PATH:$GOPATH/bin
 export MINIKUBE_IN_COLOR=false
 export MINIKUBE_IN_STYLE=false
 
+# zsh
+export ZSH_DOTENV_PROMPT=always
+
+# ibus 
+export GTK_IM_MODULE=ibus
+export XMODIFIERS=@im=ibus
+export QT_IM_MODULE=ibus
+
