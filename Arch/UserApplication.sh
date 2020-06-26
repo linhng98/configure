@@ -51,8 +51,8 @@ sudo pacman -S --noconfirm dmenu
 sudo pacman -S --noconfirm nautilus
 
 ## fcitx
-sudo pacman -S --noconfirm fcitx fcitx-im fcitx-unikey fcitx-configtool fcitx-mozc
-cp ~/configure/Arch/config_file/pam_environment ~/.pam_environment
+sudo pacman -S --noconfirm ibus
+yay -S --noconfirm ibus-bamboo
 
 ## compton
 yay -S --noconfirm compton-tryone-git feh
