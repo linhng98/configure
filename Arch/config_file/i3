@@ -49,9 +49,9 @@ bindsym $mod+Tab exec --no-startup-id rofi -show window -theme onedark
 bindsym $mod+d exec --no-startup-id dmenu_run
 
 # audio
-bindsym XF86AudioLowerVolume exec --no-startup-id pamixer -d 2
-bindsym XF86AudioRaiseVolume exec --no-startup-id pamixer -i 2
-bindsym XF86AudioMute exec --no-startup-id amixer set 'Master' toggle
+bindsym Control+Down exec --no-startup-id pamixer -d 2
+bindsym Control+Up exec --no-startup-id pamixer -i 2
+bindsym Control+0 exec --no-startup-id amixer set 'Master' toggle
 
 
 # brightness
@@ -73,7 +73,7 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # lock desktop
-bindsym $mod+Shift+l exec "i3lock -i ~/Pictures/wallpaper/lockscreen.png --clock --indicator --insidecolor=88888888 & sleep 2 && xset dpms force off"
+bindsym $mod+Shift+l exec "i3lock -i ~/Pictures/wallpaper/lockscreen.png --clock --indicator --insidecolor=88888888 & sleep 1 && xset dpms force off"
 
 # move window position
 bindsym $mod+Shift+Left move left 15 px
@@ -139,7 +139,6 @@ bindsym $mod+Shift+r restart
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 # lock i3
 
-bindsym $mod+p exec --no-startup-id /home/linh/.config/i3/script/search_pdf.sh
 
 
 # resize window (you can also use the mouse for that)
@@ -179,7 +178,7 @@ bar {
 for_window [class="^.*"] border pixel 0
 exec_always --no-startup-id feh --bg-scale ~/Pictures/wallpaper/witcher-sword.png
 exec_always --no-startup-id i3blocks
-exec_always --no-startup-id fcitx
+exec_always --no-startup-id ibus-daemon -drx
 exec_always --no-startup-id xrdb ~/.Xresources
 exec_always --no-startup-id xinput --set-prop 14 285 -0.2
 exec_always --no-startup-id "killall -q compton; compton --config ~/.config/compton.conf --blur-method kawase --blur-background --blur-strength 3"
@@ -187,4 +186,4 @@ exec_always --no-startup-id "killall -q compton; compton --config ~/.config/comp
 
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+f exec --no-startup-id nautilus
-bindsym $mod+t exec --no-startup-id urxvt
+bindsym $mod+t exec --no-startup-id st

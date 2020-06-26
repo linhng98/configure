@@ -63,7 +63,7 @@ mkdir ~/Pictures
 cp -R ~/configure/Arch/wallpaper ~/Pictures/
 
 ## font
-sudo pacman -S --noconfirm ttf-dejavu ttf-liberation noto-fonts noto-fonts-emoji otf-ipafont ttf-hanazono powerline-fonts 
+sudo pacman -S --noconfirm ttf-dejavu ttf-liberation  
 yay -S --noconfirm nerd-fonts-source-code-pro nerd-fonts-dejavu-complete
 
 ## theme and icon
