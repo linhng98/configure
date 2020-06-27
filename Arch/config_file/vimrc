@@ -7,24 +7,26 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'dracula/vim', { 'name': 'dracula' }
+Plugin 'preservim/nerdtree'
+Plugin 'ryanoasis/vim-devicons'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
-
-let g:airline_powerline_fonts = 1
-let g:dracula_colorterm = 0
 
 "--------------------------------------------
 syntax enable
 colorscheme dracula
 set nu
 set laststatus=0
+set termguicolors
 
 if has('mouse')
    set mouse=a
 endif
 
 vmap <C-c> "+y
+nmap <C-t> :NERDTreeToggle<CR>
 
 
 "--------- AUTO INDENT ----------------------
