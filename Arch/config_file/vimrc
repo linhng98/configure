@@ -30,6 +30,7 @@ nmap <C-t> :NERDTreeToggle<CR>
 nmap <C-i> :vertical resize +5<CR>
 nmap <C-o> :vertical resize -5<CR>
 
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 "--------- AUTO INDENT ----------------------
 filetype plugin indent on
