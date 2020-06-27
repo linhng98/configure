@@ -3,6 +3,9 @@
 ## detect laptop or pc
 read -p 'this device is pc or laptop (1:pc, 2:laptop) ? ' device_type
 
+# populate key
+sudo pacman-key --populate archlinux
+
 ## yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
