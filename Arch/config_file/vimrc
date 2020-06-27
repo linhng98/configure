@@ -27,6 +27,8 @@ endif
 
 vmap <C-c> "+y
 nmap <C-t> :NERDTreeToggle<CR>
+nmap <C-i> :vertical resize +5<CR>
+nmap <C-o> :vertical resize -5<CR>
 
 
 "--------- AUTO INDENT ----------------------
