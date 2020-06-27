@@ -65,7 +65,7 @@ sudo pacman -S --noconfirm nautilus
 
 ## ibus
 sudo pacman -S --noconfirm ibus
-yay -S --noconfirm ibus-bamboo
+yay -S --noconfirm ibus-bamboo ibus-mozc
 
 ## compton
 yay -S --noconfirm compton-tryone-git feh
@@ -76,7 +76,7 @@ mkdir ~/Pictures
 cp -R ~/configure/Arch/wallpaper ~/Pictures/
 
 ## font
-sudo pacman -S --noconfirm ttf-dejavu ttf-liberation  
+sudo pacman -S --noconfirm ttf-dejavu ttf-liberation otf-ipafont ttf-hanazono 
 yay -S --noconfirm nerd-fonts-source-code-pro nerd-fonts-dejavu-complete
 
 ## theme and icon
