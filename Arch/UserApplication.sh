@@ -32,6 +32,10 @@ sudo make clean install
 cd ..
 rm -rf st
 
+## install tmux
+sudo pacman -S --noconfirm tmux
+cp ~/configure/Arch/config_file/tmux.conf ~/.tmux.conf
+
 ## install nvim
 sudo pacman -S --noconfirm neovim nodejs yarn
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
