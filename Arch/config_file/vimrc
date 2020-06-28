@@ -17,7 +17,8 @@ filetype plugin indent on    " required
 "--------------------------------------------
 syntax enable
 colorscheme dracula
-set nu
+set number
+set relativenumber
 set laststatus=0
 set termguicolors
 
@@ -27,8 +28,9 @@ endif
 
 vmap <C-c> "+y
 nmap <C-t> :NERDTreeToggle<CR>
-nmap <C-i> :vertical resize +5<CR>
-nmap <C-o> :vertical resize -5<CR>
+nmap <C-M-i> :vertical resize +5<CR>
+nmap <C-M-o> :vertical resize -5<CR>
+nmap <C-M-f> :Format<CR>
 
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 

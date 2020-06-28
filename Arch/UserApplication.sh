@@ -41,7 +41,8 @@ sudo pacman -S --noconfirm neovim nodejs yarn
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mkdir ~/.config/nvim
 cp ~/configure/Arch/config_file/vimrc ~/.config/nvim/init.vim
-nvim +slient +VimEnter +PlugInstall +qall && nvim -c "CocInstall -sync coc-python coc-go"
+nvim +slient +VimEnter +PlugInstall +qall && nvim -c "CocInstall -sync coc-python coc-go coc-json"
+cp ~/configure/Arch/config_file/coc-settings.json ~/.config/nvim/
 
 
 ## install zsh
