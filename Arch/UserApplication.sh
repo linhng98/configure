@@ -19,6 +19,7 @@ echo 'exec i3' >> ~/.xinitrc
 
 ## install i3 and i3status
 sudo pacman -S --noconfirm i3-gaps i3blocks
+yay -S i3lock-color
 mkdir -p ~/.config/i3
 mkdir ~/.config/i3blocks
 cp ~/configure/Arch/config_file/i3 ~/.config/i3/config
