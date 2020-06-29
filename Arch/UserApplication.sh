@@ -42,7 +42,7 @@ sudo pacman -S --noconfirm neovim nodejs yarn
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mkdir ~/.config/nvim
 cp ~/configure/Arch/config_file/vimrc ~/.config/nvim/init.vim
-nvim +slient +VimEnter +PlugInstall +qall && nvim -c "CocInstall -sync coc-python coc-go coc-json"
+# nvim +slient +VimEnter +PlugInstall +qall && nvim -c "CocInstall -sync coc-python coc-go coc-json"
 cp ~/configure/Arch/config_file/coc-settings.json ~/.config/nvim/
 
 
@@ -115,8 +115,8 @@ sudo systemctl enable lightdm
 sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 
 ## utilize multi threads compress
-sudo sed -i -e "s/COMPRESSXZ=*/COMPRESSXZ=(xz -c -z - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
-sudo sed -i -e "s/COMPRESSZST=*/COMPRESSZST=(zstd -c -z -q - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
+sudo sed -i -e "s/COMPRESSXZ=.*/COMPRESSXZ=(xz -c -z - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
+sudo sed -i -e "s/COMPRESSZST=.*/COMPRESSZST=(zstd -c -z -q - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
 
 ## enable android caple connection file transfer
 sudo pacman -S --noconfirm gvfs-mtp mtpfs
