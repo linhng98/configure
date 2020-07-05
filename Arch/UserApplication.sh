@@ -42,7 +42,7 @@ sudo pacman -S --noconfirm neovim nodejs yarn
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 mkdir ~/.config/nvim
 cp ~/configure/Arch/config_file/vimrc ~/.config/nvim/init.vim
-nvim +slient +VimEnter +PlugInstall +qall && nvim -c "CocInstall -sync coc-python coc-go coc-json"
+# nvim +slient +VimEnter +PlugInstall +qall && nvim -c "CocInstall -sync coc-python coc-go coc-json"
 cp ~/configure/Arch/config_file/coc-settings.json ~/.config/nvim/
 
 
@@ -67,7 +67,6 @@ sudo pacman -S --noconfirm nautilus
 
 ## ibus
 sudo pacman -S --noconfirm ibus
-yay -S --noconfirm ibus-bamboo ibus-mozc
 
 ## compton
 yay -S --noconfirm compton-tryone-git feh
@@ -90,7 +89,7 @@ cp ~/configure/Arch/config_file/gtk3-settings.ini ~/.config/gtk-3.0/settings.ini
 sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
 sudo bash -c 'echo nvram = [\"/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd\"] >> /etc/libvirt/qemu.conf'
 sudo cp ~/configure/Arch/config_file/50-libvirt.rules /etc/polkit-1/rules.d/50-libvirt.rules
-sudo usermod -aG kvm linh
+sudo usermod -aG kvm $USER
 sudo systemctl enable libvirtd
 
 ## auto start
@@ -115,8 +114,8 @@ sudo systemctl enable lightdm
 sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 
 ## utilize multi threads compress
-sudo sed -i -e "s/COMPRESSXZ=*/COMPRESSXZ=(xz -c -z - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
-sudo sed -i -e "s/COMPRESSZST=*/COMPRESSZST=(zstd -c -z -q - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
+sudo sed -i -e "s/COMPRESSXZ=.*/COMPRESSXZ=(xz -c -z - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
+sudo sed -i -e "s/COMPRESSZST=.*/COMPRESSZST=(zstd -c -z -q - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
 
 ## enable android caple connection file transfer
 sudo pacman -S --noconfirm gvfs-mtp mtpfs
