@@ -114,8 +114,8 @@ sudo systemctl enable lightdm
 sudo sed -i 's/#greeter-session=example-gtk-gnome/greeter-session=lightdm-webkit2-greeter/g' /etc/lightdm/lightdm.conf
 
 ## utilize multi threads compress
-sudo sed -i -e "s/COMPRESSXZ=.*/COMPRESSXZ=(xz -c -z - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
-sudo sed -i -e "s/COMPRESSZST=.*/COMPRESSZST=(zstd -c -z -q - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
+sudo sed -i -e "s/COMPRESSXZ=.*$/COMPRESSXZ=(xz -c -z - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
+sudo sed -i -e "s/COMPRESSZST=.*$/COMPRESSZST=(zstd -c -z -q - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
 
 ## enable android caple connection file transfer
 sudo pacman -S --noconfirm gvfs-mtp mtpfs
