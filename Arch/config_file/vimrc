@@ -5,7 +5,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'neoclide/coc.nvim', {'branch': 'release'}
+"Plugin 'neoclide/coc.nvim', {'branch': 'release'}
 Plugin 'dracula/vim', { 'name': 'dracula' }
 Plugin 'preservim/nerdtree'
 Plugin 'ryanoasis/vim-devicons'
