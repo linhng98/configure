@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 17,
+    "editor.fontSize": 16,
     "python.venvFolders": [
         "~/.virt-env"
     ],
@@ -19,5 +19,12 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.tabSize": 2,
     "diffEditor.ignoreTrimWhitespace": false,
+    "workbench.colorTheme": "Dracula",
+    "workbench.editor.enablePreview": false,
+    "vim.enableNeovim": true,
+    "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
+    "vim.neovimPath": "/usr/bin/nvim",
+    "vim.vimrc.enable": true,
+    "vim.useSystemClipboard": true,
+    "window.zoomLevel": 0
 }
-
