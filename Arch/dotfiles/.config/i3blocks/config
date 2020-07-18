@@ -1,0 +1,36 @@
+# i3blocks configuration file
+#
+# The i3blocks man page describes the usage of the binary,
+# and its website describes the configuration:
+#
+#     https://vivien.github.io/i3blocks
+
+
+# Global properties
+separator=true
+separator_block_width=30
+color=#33ffff
+
+[pin]
+command=echo "BAT   `cat /sys/class/power_supply/BAT1/capacity`% `cat /sys/class/power_supply/BAT1/status`"
+interval=10
+
+[volume]
+command=echo "VOL  `amixer -D pulse sget Master | grep 'Left:' | awk -F'[][]' '{ print $2 }'` "
+interval=1
+
+[cpu_usage]
+command=echo "CPU   `top -bn1 | grep "Cpu(s)" | sed "s/.*, *\([0-9.]*\)%* id.*/\1/" | awk '{print 100 - $1"%"}'`"
+interval=1
+
+[ram]
+command=echo "RAM   `grep "MemAvailable" /proc/meminfo | awk '{printf "%.1fG\n", $2/1000000}'`"
+interval=1
+
+[disk]
+command=echo "HOME   `df -h "$HOME"  | awk 'NR==2{print $4}'`"
+interval=10
+
+[time]
+command=date '+%Y-%m-%d %H:%M:%S'
+interval=1
