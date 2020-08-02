@@ -1,8 +1,7 @@
 #!/bin/bash
 
 git clone --bare https://github.com/nobabykill/dotfiles.git $HOME/.dotfiles
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-dotfiles checkout -f
+/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f
 
 ## detect laptop or pc
 read -p 'this device is pc or laptop (1:pc, 2:laptop) ? ' device_type
@@ -23,7 +22,7 @@ echo 'exec i3' >> ~/.xinitrc
 
 ## install i3 and i3status
 sudo pacman -S --noconfirm i3-gaps i3blocks
-yay -S i3lock-color
+yay -S --noconfirm i3lock-color
 
 ## install st
 git clone https://github.com/khuedoan98/st.git
@@ -42,7 +41,7 @@ git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ## install zsh
 sudo pacman -S --noconfirm zsh zsh-completions dash
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 
 ## audio
