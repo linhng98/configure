@@ -25,9 +25,9 @@ sudo pacman -S --noconfirm i3-gaps i3blocks
 yay -S --noconfirm i3lock-color
 
 ## install st
-git clone https://github.com/khuedoan98/st.git
+git clone https://github.com/khuedoan/st.git
 cd st
-cp ~/configure/Arch/config_file/st.config.h config.h
+sed -i 's/*font.*$/*font = "DejaVuSansMono Nerd Font Mono:pixelsize=17:antialias=true:autohint=true";/' config.h
 sudo make clean install
 cd ..
 rm -rf st
@@ -38,6 +38,8 @@ sudo pacman -S --noconfirm tmux
 ## install nvim
 sudo pacman -S --noconfirm neovim nodejs yarn
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+sudo ln -sf /usr/bin/nvim /usr/bin/vi
+sudo ln -sf /usr/bin/nvim /usr/bin/vim
 
 ## install zsh
 sudo pacman -S --noconfirm zsh zsh-completions dash
