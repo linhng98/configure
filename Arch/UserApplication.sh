@@ -75,6 +75,9 @@ yay -S --noconfirm nerd-fonts-source-code-pro nerd-fonts-dejavu-complete
 ## theme and icon
 sudo pacman -S --noconfirm  arc-icon-theme deepin-gtk-theme
 
+## miscellaneous
+sudo pacman -S --noconfirm tree neofetch thefuck 
+
 ## kvm
 sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
 sudo bash -c 'echo nvram = [\"/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd\"] >> /etc/libvirt/qemu.conf'
