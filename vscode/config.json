@@ -1,5 +1,5 @@
 {
-    "editor.fontSize": 16,
+    "editor.fontSize": 17,
     "python.venvFolders": [
         "~/.virt-env"
     ],
@@ -19,12 +19,17 @@
     "javascript.updateImportsOnFileMove.enabled": "always",
     "editor.tabSize": 2,
     "diffEditor.ignoreTrimWhitespace": false,
-    "workbench.colorTheme": "Dracula",
-    "workbench.editor.enablePreview": false,
+    "workbench.editor.enablePreview": true,
     "vim.enableNeovim": true,
     "vim.vimrc.path": "$HOME/.config/nvim/init.vim",
     "vim.neovimPath": "/usr/bin/nvim",
     "vim.vimrc.enable": true,
-    "vim.useSystemClipboard": true,
-    "window.zoomLevel": 0
+    "vim.useSystemClipboard": false,
+    "window.zoomLevel": 0,
+    "workbench.colorTheme": "Dracula",
+    "[typescript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "typescript.updateImportsOnFileMove.enabled": "always",
+    "terminal.integrated.fontFamily": "DejaVuSansMono Nerd Font Mono"
 }
