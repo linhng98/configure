@@ -109,6 +109,19 @@ sudo sed -i -e "s/COMPRESSZST=.*$/COMPRESSZST=(zstd -c -z -q - --threads=`grep -
 ## enable android caple connection file transfer
 sudo pacman -S --noconfirm gvfs-mtp mtpfs
 
+## install utility command
+# k9s
+sudo pacman -S --noconfirm k9s
+# kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+sudo mv kubectl /usr/bin/kubectl
+
+# docker
+sudo pacman -S --noconfirm docker docker-compose
+sudo groupadd docker
+sudo usermod -aG docker $USER
+
 ## check if device is laptop
 if [ $device_type -eq 2 ] 
 then
