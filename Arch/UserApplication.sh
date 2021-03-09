@@ -77,6 +77,7 @@ sudo pacman -S --noconfirm  arc-icon-theme deepin-gtk-theme
 
 ## miscellaneous
 sudo pacman -S --noconfirm tree neofetch thefuck 
+sudo pacman -S --noconfirm network-manager-applet
 
 ## kvm
 sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
