@@ -60,6 +60,7 @@ sudo pacman -S --noconfirm nautilus
 
 ## ibus
 sudo pacman -S --noconfirm ibus
+yay -S --noconfirm ibus-bamboo ibus-mozc
 
 ## compton
 yay -S --noconfirm compton-tryone-git feh
