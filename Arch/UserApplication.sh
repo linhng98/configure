@@ -1,7 +1,8 @@
 #!/bin/bash
 
-git clone --bare https://github.com/nobabykill/dotfiles.git $HOME/.dotfiles
-/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME checkout -f
+cd
+git init https://github.com/nobabykill/dotfiles.git
+git reset --hard origin/master
 
 ## detect laptop or pc
 read -p 'this device is pc or laptop (1:pc, 2:laptop) ? ' device_type
