@@ -107,7 +107,7 @@ sudo sed -i -e "s/COMPRESSXZ=.*$/COMPRESSXZ=(xz -c -z - --threads=`grep -c ^proc
 sudo sed -i -e "s/COMPRESSZST=.*$/COMPRESSZST=(zstd -c -z -q - --threads=`grep -c ^processor /proc/cpuinfo`)/g" /etc/makepkg.conf 
 
 ## enable android caple connection file transfer
-sudo pacman -S --noconfirm gvfs-mtp mtpfs
+sudo pacman -S --noconfirm gvfs-mtp mtpfs unzip
 
 ## install utility command
 # k9s
@@ -121,6 +121,28 @@ sudo mv kubectl /usr/bin/kubectl
 sudo pacman -S --noconfirm docker docker-compose
 sudo groupadd docker
 sudo usermod -aG docker $USER
+
+# gcloud sdk
+curl -LO https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-340.0.0-linux-x86_64.tar.gz --output google-cloud-sdk.tar.gz
+sudo tar -zxvf google-cloud-sdk.tar.gz -C /opt
+sudo ln -sf /opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
+rm -rf 
+
+# helm
+
+# terraform
+curl -L https://releases.hashicorp.com/terraform/0.14.11/terraform_0.14.11_linux_amd64.zip --output terraform.zip
+sudo unzip terraform.zip -d /opt/terraform_v0.14.11
+sudo ln -sf /opt/terraform_v0.14.11/terraform /usr/bin/terraform
+rm -rf terraform.zip
+
+# terragrunt
+curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.28.24/terragrunt_linux_amd64 --output terragrunt_v0.28.24
+chmod +x terragrunt_v0.28.24
+sudo mkdir /opt/terragrunt_v0.28.24
+sudo mv terragrunt_v0.28.24 /opt/terragrunt_v0.28.24/terragrunt
+sudo ln -sf /opt/terragrunt_v0.28.24/terragrunt /usr/bin/terragrunt
+
 
 ## check if device is laptop
 if [ $device_type -eq 2 ] 
