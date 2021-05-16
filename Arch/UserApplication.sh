@@ -1,9 +1,5 @@
 #!/bin/bash
 
-cd
-git init https://github.com/nobabykill/dotfiles.git
-git reset --hard origin/master
-
 ## detect laptop or pc
 read -p 'this device is pc or laptop (1:pc, 2:laptop) ? ' device_type
 
@@ -46,6 +42,7 @@ sudo ln -sf /usr/bin/nvim /usr/bin/vim
 sudo pacman -S --noconfirm zsh zsh-completions dash
 sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 
 ## audio
 sudo pacman -S --noconfirm alsa-utils pulseaudio-alsa pamixer
@@ -136,3 +133,10 @@ then
     sudo pacman -S --noconfirm xf86-input-libinput
     sudo cp ~/configure/Arch/config_file/30-touchpad.conf /etc/X11/xorg.conf.d/30-touchpad.conf
 fi
+
+# get config
+cd
+git init 
+git remote add origin https://github.com/nobabykill/dotfiles.git
+git pull
+git reset --hard origin/master
