@@ -28,6 +28,7 @@ sed -i 's/*font.*$/*font = "DejaVuSansMono Nerd Font Mono:pixelsize=17:antialias
 sudo make clean install
 cd ..
 rm -rf st
+yay -S --noconfirm libxft-bgra
 
 ## install tmux
 sudo pacman -S --noconfirm tmux
