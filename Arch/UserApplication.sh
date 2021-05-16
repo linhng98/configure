@@ -129,6 +129,16 @@ sudo ln -sf /opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 rm -rf 
 
 # helm
+helm_version="v3.5.4"
+curl -L "https://get.helm.sh/helm-${helm_version}-linux-amd64.tar.gz" --output helm.tar.gz
+tar -zxvf helm.tar.gz
+sudo mv linux-amd64 /opt/helm_${helm_version}
+sudo ln -sf /opt/helm_${helm_version}/helm /usr/bin/helm
+
+# kubectl
+curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
+chmod +x kubectl
+sudo mv kubectl /usr/bin
 
 # terraform
 curl -L https://releases.hashicorp.com/terraform/0.14.11/terraform_0.14.11_linux_amd64.zip --output terraform.zip
