@@ -154,6 +154,10 @@ sudo mkdir /opt/terragrunt_v0.28.24
 sudo mv terragrunt_v0.28.24 /opt/terragrunt_v0.28.24/terragrunt
 sudo ln -sf /opt/terragrunt_v0.28.24/terragrunt /usr/bin/terragrunt
 
+# vagrant
+sudo pacman -S --noconfirm vagrant
+vagrant plugin install vagrant-libvirt
+
 
 ## check if device is laptop
 if [ $device_type -eq 2 ] 
