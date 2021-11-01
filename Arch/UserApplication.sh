@@ -124,7 +124,7 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # gcloud sdk
-curl -LO https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-340.0.0-linux-x86_64.tar.gz --output google-cloud-sdk.tar.gz
+curl -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-362.0.0-linux-x86_64.tar.gz --output google-cloud-sdk.tar.gz
 sudo tar -zxvf google-cloud-sdk.tar.gz -C /opt
 sudo ln -sf /opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 rm -rf 
