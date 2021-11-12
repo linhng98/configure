@@ -1,4 +1,8 @@
 PODS_PATTERN=$1
-NAMESPACE=$2
+NAMESPACES=($(kubectl get ns | tail -n +2 | awk '{print $1}'))
 
-kubectl get pods --namespace $NAMESPACE | grep $PODS_PATTERN | awk '{print $1}' | while read line; do kubectl delete pods $line --namespace $NAMESPACE; done
+for ns in "${NAMESPACES[@]}"
+do
+  kubectl get pods --namespace $ns | grep $PODS_PATTERN | awk '{print $1}' | while read line;
+do kubectl delete pods $line --namespace $ns; done
+done
