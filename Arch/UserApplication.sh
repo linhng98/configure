@@ -124,13 +124,13 @@ sudo groupadd docker
 sudo usermod -aG docker $USER
 
 # gcloud sdk
-curl -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-362.0.0-linux-x86_64.tar.gz --output google-cloud-sdk.tar.gz
+curl -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-367.0.0-linux-x86_64.tar.gz --output google-cloud-sdk.tar.gz
 sudo tar -zxvf google-cloud-sdk.tar.gz -C /opt
 sudo ln -sf /opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 rm -rf 
 
 # helm
-helm_version="v3.5.4"
+helm_version="v3.7.2"
 curl -L "https://get.helm.sh/helm-${helm_version}-linux-amd64.tar.gz" --output helm.tar.gz
 tar -zxvf helm.tar.gz
 sudo mv linux-amd64 /opt/helm_${helm_version}
@@ -142,17 +142,17 @@ chmod +x kubectl
 sudo mv kubectl /usr/bin
 
 # terraform
-curl -L https://releases.hashicorp.com/terraform/0.14.11/terraform_0.14.11_linux_amd64.zip --output terraform.zip
-sudo unzip terraform.zip -d /opt/terraform_v0.14.11
-sudo ln -sf /opt/terraform_v0.14.11/terraform /usr/bin/terraform
+curl -L https://releases.hashicorp.com/terraform/1.1.2/terraform_1.1.2_linux_amd64.zip --output terraform.zip
+sudo unzip terraform.zip -d /opt/terraform_v1.1.2
+sudo ln -sf /opt/terraform_v1.1.2/terraform /usr/bin/terraform
 rm -rf terraform.zip
 
 # terragrunt
-curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.28.24/terragrunt_linux_amd64 --output terragrunt_v0.28.24
-chmod +x terragrunt_v0.28.24
-sudo mkdir /opt/terragrunt_v0.28.24
-sudo mv terragrunt_v0.28.24 /opt/terragrunt_v0.28.24/terragrunt
-sudo ln -sf /opt/terragrunt_v0.28.24/terragrunt /usr/bin/terragrunt
+curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.31.0/terragrunt_linux_amd64 --output terragrunt_v0.31.0
+chmod +x terragrunt_v0.31.0
+sudo mkdir /opt/terragrunt_v0.31.0
+sudo mv terragrunt_v0.31.0 /opt/terragrunt_v0.31.0/terragrunt
+sudo ln -sf /opt/terragrunt_v0.31.0/terragrunt /usr/bin/terragrunt
 
 # vagrant
 sudo pacman -S --noconfirm vagrant
