@@ -177,3 +177,5 @@ git init
 git remote add origin https://github.com/nobabykill/dotfiles.git
 git pull
 git reset --hard origin/master
+git config status.showuntrackedfiles no
+
