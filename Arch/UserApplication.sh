@@ -49,7 +49,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 sudo pacman -S --noconfirm alsa-utils pulseaudio-alsa pamixer
 
 ## screenshot
-sudo pacman -S --noconfirm xclip scrot
+sudo pacman -S --noconfirm xclip scrot flameshot
 
 ## install dmenu
 sudo pacman -S --noconfirm dmenu
@@ -62,7 +62,7 @@ sudo pacman -S --noconfirm ibus
 yay -S --noconfirm ibus-bamboo ibus-mozc
 
 ## compton
-yay -S --noconfirm compton-tryone-git feh
+sudo pacman -S picom
 
 ## wallpaper
 mkdir ~/Pictures
