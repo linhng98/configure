@@ -112,7 +112,10 @@ sudo pacman -S --noconfirm gvfs-mtp mtpfs unzip
 
 ## install utility command
 # k9s
-sudo pacman -S --noconfirm k9s
+curl -L -O https://github.com/derailed/k9s/releases/download/v0.25.0/k9s_Linux_x86_64.tar.gz
+tar -zxvf k9s_Linux_x86_64.tar.gz -C /tmp
+sudo mv /tmp/k9s /usr/bin/k9s
+
 # kubectl
 curl -LO "https://dl.k8s.io/release/$(curl -L -s https://dl.k8s.io/release/stable.txt)/bin/linux/amd64/kubectl"
 chmod +x kubectl
@@ -153,6 +156,12 @@ chmod +x terragrunt_v0.31.0
 sudo mkdir /opt/terragrunt_v0.31.0
 sudo mv terragrunt_v0.31.0 /opt/terragrunt_v0.31.0/terragrunt
 sudo ln -sf /opt/terragrunt_v0.31.0/terragrunt /usr/bin/terragrunt
+
+# rust
+sudo pacman -S rustup
+rustup toolchain install stable
+rustup default stable
+rustup component add rls rust-analysis rust-src
 
 # vagrant
 sudo pacman -S --noconfirm vagrant
