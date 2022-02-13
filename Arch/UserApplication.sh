@@ -80,7 +80,7 @@ sudo pacman -S --noconfirm tree neofetch thefuck
 sudo pacman -S --noconfirm network-manager-applet
 
 ## kvm
-sudo pacman -S --noconfirm virt-manager qemu vde2 ebtables dnsmasq bridge-utils openbsd-netcat ovmf
+sudo pacman -S --noconfirm virt-manager qemu vde2 dnsmasq bridge-utils gnu-netcat ovmf
 sudo bash -c 'echo nvram = [\"/usr/share/ovmf/x64/OVMF_CODE.fd:/usr/share/ovmf/x64/OVMF_VARS.fd\"] >> /etc/libvirt/qemu.conf'
 sudo cp ~/configure/Arch/config_file/50-libvirt.rules /etc/polkit-1/rules.d/50-libvirt.rules
 sudo usermod -aG kvm $USER
