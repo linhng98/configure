@@ -96,7 +96,7 @@ sudo timedatectl set-local-rtc 1 --adjust-system-clock
 git config --global core.editor vim
 git config --global credential.helper store
 git config --global user.email "linh1612340@gmail.com"
-git config --global user.name "nobabykill" 
+git config --global user.name "linhng98" 
 
 ## lightdm
 sudo pacman -S --noconfirm lightdm lightdm-webkit2-greeter 
@@ -183,7 +183,7 @@ fi
 # get config
 cd
 git init 
-git remote add origin https://github.com/nobabykill/dotfiles.git
+git remote add origin https://github.com/linhng98/dotfiles.git
 git pull
 git reset --hard origin/master
 git config status.showuntrackedfiles no
