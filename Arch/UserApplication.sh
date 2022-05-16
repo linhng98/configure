@@ -52,7 +52,7 @@ sudo pacman -S --noconfirm alsa-utils pulseaudio-alsa pamixer
 sudo pacman -S --noconfirm xclip scrot flameshot
 
 ## install dmenu
-sudo pacman -S --noconfirm dmenu
+sudo pacman -S --noconfirm dmenu feh
 
 ## file management
 sudo pacman -S --noconfirm nautilus
@@ -126,11 +126,24 @@ sudo pacman -S --noconfirm docker docker-compose
 sudo groupadd docker
 sudo usermod -aG docker $USER
 
+cd /tmp
+
 # gcloud sdk
 curl -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-367.0.0-linux-x86_64.tar.gz --output google-cloud-sdk.tar.gz
 sudo tar -zxvf google-cloud-sdk.tar.gz -C /opt
 sudo ln -sf /opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
-rm -rf 
+
+# aws cli
+curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+unzip awscliv2.zip
+sudo ./aws/install
+
+# azure cli
+sudo pacman -S --noconfirm python-pip
+sudo pip install azure-cli
+
+# ansible
+sudo pacman -S --noconfirm ansible
 
 # helm
 helm_version="v3.7.2"
