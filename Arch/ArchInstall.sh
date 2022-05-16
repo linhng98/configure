@@ -37,7 +37,7 @@ echo "root:$rootpass" | chpasswd
 ## create new user and uncomment visudo for wheel group
 useradd -m -G wheel -s /bin/bash $username
 echo "$username:$userpass" | chpasswd
-sed -i '/%wheel ALL=(ALL) ALL/s/^# //g' /etc/sudoers
+sed -i '/%wheel ALL=(ALL:ALL) ALL/s/^# //g' /etc/sudoers
 
 ## remove configure folder
 rm -rf /configure

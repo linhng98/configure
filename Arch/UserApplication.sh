@@ -158,7 +158,7 @@ sudo mv terragrunt_v0.31.0 /opt/terragrunt_v0.31.0/terragrunt
 sudo ln -sf /opt/terragrunt_v0.31.0/terragrunt /usr/bin/terragrunt
 
 # rust
-sudo pacman -S rustup
+sudo pacman -S --noconfirm rustup
 rustup toolchain install stable
 rustup default stable
 rustup component add rls rust-analysis rust-src
