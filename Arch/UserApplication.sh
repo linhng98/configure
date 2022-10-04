@@ -139,8 +139,11 @@ unzip awscliv2.zip
 sudo ./aws/install
 
 # azure cli
+git clone https://github.com/dmakeienko/azcli.git ~/.oh-my-zsh/custom/plugins/azcli
+curl -L https://raw.githubusercontent.com/Azure/azure-cli/dev/az.completion -o ~/.oh-my-zsh/custom/az.completion
 sudo pacman -S --noconfirm python-pip
-sudo pip install azure-cli
+pip install azure-cli
+pip install argcomplete
 
 # ansible
 sudo pacman -S --noconfirm ansible
