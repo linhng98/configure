@@ -112,7 +112,7 @@ sudo pacman -S --noconfirm gvfs-mtp mtpfs unzip
 
 ## install utility command
 # k9s
-curl -L -O https://github.com/derailed/k9s/releases/download/v0.25.0/k9s_Linux_x86_64.tar.gz
+curl -L -O https://github.com/derailed/k9s/releases/download/v0.26.6/k9s_Linux_x86_64.tar.gz
 tar -zxvf k9s_Linux_x86_64.tar.gz -C /tmp
 sudo mv /tmp/k9s /usr/bin/k9s
 
@@ -129,7 +129,7 @@ sudo usermod -aG docker $USER
 cd /tmp
 
 # gcloud sdk
-curl -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-367.0.0-linux-x86_64.tar.gz --output google-cloud-sdk.tar.gz
+curl -L https://dl.google.com/dl/cloudsdk/channels/rapid/downloads/google-cloud-sdk-404.0.0-linux-x86_64.tar.gz --output google-cloud-sdk.tar.gz
 sudo tar -zxvf google-cloud-sdk.tar.gz -C /opt
 sudo ln -sf /opt/google-cloud-sdk/bin/gcloud /usr/bin/gcloud
 
@@ -149,7 +149,7 @@ pip install argcomplete
 sudo pacman -S --noconfirm ansible
 
 # helm
-helm_version="v3.7.2"
+helm_version="v3.10.0"
 curl -L "https://get.helm.sh/helm-${helm_version}-linux-amd64.tar.gz" --output helm.tar.gz
 tar -zxvf helm.tar.gz
 sudo mv linux-amd64 /opt/helm_${helm_version}
@@ -161,17 +161,17 @@ chmod +x kubectl
 sudo mv kubectl /usr/bin
 
 # terraform
-curl -L https://releases.hashicorp.com/terraform/1.1.2/terraform_1.1.2_linux_amd64.zip --output terraform.zip
-sudo unzip terraform.zip -d /opt/terraform_v1.1.2
-sudo ln -sf /opt/terraform_v1.1.2/terraform /usr/bin/terraform
+curl -L https://releases.hashicorp.com/terraform/1.3.1/terraform_1.3.1_linux_amd64.zip --output terraform.zip
+sudo unzip terraform.zip -d /opt/terraform_v1.3.1
+sudo ln -sf /opt/terraform_v1.3.1/terraform /usr/bin/terraform
 rm -rf terraform.zip
 
 # terragrunt
-curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.31.0/terragrunt_linux_amd64 --output terragrunt_v0.31.0
-chmod +x terragrunt_v0.31.0
-sudo mkdir /opt/terragrunt_v0.31.0
-sudo mv terragrunt_v0.31.0 /opt/terragrunt_v0.31.0/terragrunt
-sudo ln -sf /opt/terragrunt_v0.31.0/terragrunt /usr/bin/terragrunt
+curl -L https://github.com/gruntwork-io/terragrunt/releases/download/v0.38.0/terragrunt_linux_amd64 --output terragrunt_v0.38.0
+chmod +x terragrunt_v0.38.0
+sudo mkdir /opt/terragrunt_v0.38.0
+sudo mv terragrunt_v0.38.0 /opt/terragrunt_v0.38.0/terragrunt
+sudo ln -sf /opt/terragrunt_v0.38.0/terragrunt /usr/bin/terragrunt
 
 # rust
 sudo pacman -S --noconfirm rustup
