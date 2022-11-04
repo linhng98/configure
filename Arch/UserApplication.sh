@@ -55,7 +55,7 @@ sudo pacman -S --noconfirm xclip scrot flameshot
 sudo pacman -S --noconfirm dmenu feh
 
 ## file management
-sudo pacman -S --noconfirm nautilus
+sudo pacman -S --noconfirm thunar
 
 ## ibus
 sudo pacman -S --noconfirm ibus
