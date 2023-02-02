@@ -111,8 +111,8 @@ sudo pacman -S --noconfirm gvfs-mtp mtpfs unzip
 
 ## install utility command
 # k9s
-curl -L -O https://github.com/derailed/k9s/releases/download/v0.26.6/k9s_Linux_x86_64.tar.gz
-tar -zxvf k9s_Linux_x86_64.tar.gz -C /tmp
+curl -L -O https://github.com/derailed/k9s/releases/download/v0.27.2/k9s_Linux_amd64.tar.gz
+tar -zxvf k9s_Linux_amd64.tar.gz -C /tmp
 sudo mv /tmp/k9s /usr/bin/k9s
 
 # kubectl
