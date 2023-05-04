@@ -24,7 +24,7 @@ yay -S --noconfirm i3lock-color
 ## install st
 git clone https://github.com/khuedoan/st.git
 cd st
-sed -i 's/*font.*$/*font = "DejaVuSansMono Nerd Font Mono:pixelsize=17:antialias=true:autohint=true";/' config.h
+sed -i 's/*font.*$/*font = "DejaVuSansM Nerd Font Mono:pixelsize=17:antialias=true:autohint=true";/' config.h
 sudo make clean install
 cd ..
 rm -rf st
@@ -69,8 +69,7 @@ mkdir ~/Pictures
 cp -R ~/configure/Arch/wallpaper ~/Pictures/
 
 ## font
-sudo pacman -S --noconfirm ttf-dejavu ttf-liberation otf-ipafont ttf-hanazono 
-yay -S --noconfirm nerd-fonts-source-code-pro nerd-fonts-dejavu-complete
+sudo pacman -S --noconfirm ttf-dejavu ttf-liberation otf-ipafont ttf-hanazono ttf-dejavu-nerd ttf-sourcecodepro-nerd
 
 ## theme and icon
 sudo pacman -S --noconfirm  arc-icon-theme deepin-gtk-theme
