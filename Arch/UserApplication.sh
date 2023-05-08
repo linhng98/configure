@@ -69,7 +69,7 @@ mkdir ~/Pictures
 cp -R ~/configure/Arch/wallpaper ~/Pictures/
 
 ## font
-sudo pacman -S --noconfirm ttf-dejavu ttf-liberation otf-ipafont ttf-hanazono ttf-dejavu-nerd ttf-sourcecodepro-nerd
+sudo pacman -S --noconfirm ttf-dejavu ttf-liberation ttf-dejavu-nerd ttf-sourcecodepro-nerd ttf-nerd-fonts-symbols
 
 ## theme and icon
 sudo pacman -S --noconfirm  arc-icon-theme deepin-gtk-theme
